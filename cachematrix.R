@@ -21,7 +21,8 @@ makeCacheMatrix <- function(x = matrix()) {
            setInverse = setInverse, getInverse = getInverse)
 }
 
-## Write a short comment describing this function
+## Function to call getter&setter pair functions in makeCacheMatrix, return 
+## newly calculated inverse matrix or cached inverse
 
 cacheSolve <- function(x, ...) {
       # retrive cached inverse matrix
@@ -33,7 +34,7 @@ cacheSolve <- function(x, ...) {
       }
       # retrive new matrix and calculate new inverse
       matrix <- x$getMatrix()
-      inv <- solve(matrix)
+      inv <- solve(matrix, ...)
       # set inverse matrix in parenting, and return 
       x$setInverse(inv)
       inv
